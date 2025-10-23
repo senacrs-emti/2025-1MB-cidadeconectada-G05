@@ -1,0 +1,30 @@
+*{
+    color: rgb(0, 0, 0);
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+ 
+h1{color: #620860;}
+ 
+h2{color: #620869;}
+ 
+section{background-color: rgba(154, 108, 146, 0.356);}
+ 
+.creation-date{
+    color: #121212;
+}
+ 
+.container{
+    width: 1264px;
+    margin: 0 auto 0 auto;
+}
+ 
+.creation-date{
+    color: #121212;
+}
+ 
+.articles{
+    display: flex;
+}
+ 

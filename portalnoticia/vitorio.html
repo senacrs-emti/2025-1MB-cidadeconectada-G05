@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Portal Notícias — Home</title>
+    <meta name="description" content="Portal de notícias com seções para Esporte, Economia, Política, Tecnologia, Cultura, Opinião e mais." />
+    <style>
+    :root{
+    --accent:#473fea;
+    --muted:#2a721b;
+    --bg:#ffffff;
+    --card:#ffffff;
+    --radius:12px;
+    --max-width:1200px;
+    font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:#0f1724;line-height:1.45}
+    .container{max-width:var(--max-width);margin:24px auto;padding:0 16px}
+
+    header.site-header{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#22c1c3);display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
+    nav.main-nav{display:flex;gap:12px;align-items:center}
+    nav.main-nav a{color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:8px}
+    nav.main-nav a:hover{background:#eef2ff;color:var(--accent)}
+    .actions{display:flex;gap:8px;align-items:center}
+    .search{position:relative}
+    .search input{padding:8px 36px 8px 12px;border-radius:10px;border:1px solid #e6e9ef;background:white}
+    .search svg{position:absolute;right:8px;top:8px;width:20px;height:20px;opacity:.6}
+
+    .grid{display:grid;grid-template-columns:2fr 1fr;gap:20px;margin-top:18px}
+
+    .hero{background:var(--card);padding:18px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(14,30,37,.06)}
+    .hero .top{display:flex;gap:18px}
+    .hero .big{flex:1}
+    .hero .big img{width:100%;height:320px;object-fit:cover;border-radius:10px}
+    .hero h1{font-size:20px;margin:10px 0}
+    .hero p{color:var(--muted);margin:0}
+    .mini-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
+    .card{background:var(--card);padding:12px;border-radius:10px;border:1px solid #eef2f6}
+    .card small{color:var(--muted)}
+
+    .section-title{display:flex;align-items:center;justify-content:space-between;margin:8px 0}
+    .section-title h2{font-size:16px;margin:0}
+    .section-title a{font-size:13px;color:var(--accent);text-decoration:none}
+
+    /* Sidebar */
+    aside.sidebar{display:flex;flex-direction:column;gap:12px}
+    .widget{background:var(--card);padding:12px;border-radius:10px;border:1px solid #eef2f6}
+    .topics{display:flex;flex-wrap:wrap;gap:8px}
+    .topic{background:#f3f6ff;padding:6px 10px;border-radius:8px;font-size:13px;color:var(--accent)}
+
+    /* Sections list */
+    .list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .article-card{display:flex;gap:12px}
+    .article-card img{width:110px;height:72px;object-fit:cover;border-radius:8px}
+    .article-card h3{font-size:14px;margin:0}
+    .article-card p{color:var(--muted);font-size:13px;margin:6px 0 0}
+
+    footer{margin-top:28px;text-align:center;color:var(--muted);padding:16px}
+
+    .tags{display:flex;gap:8px;flex-wrap:wrap}
+    .tag{background:#eef6ff;padding:6px 10px;border-radius:999px;font-size:13px;color:var(--accent)}
+
+    /* simple article template */
+    .article-full{background:var(--card);padding:18px;border-radius:12px;border:1px solid #eef4fb}
+    .article-full img{width:100%;height:420px;object-fit:cover;border-radius:10px}
+    .meta{color:var(--muted);font-size:13px;margin-top:8px}
+
+    /* responsive */
+    @media (max-width:900px){
+      .grid{grid-template-columns:1fr;}
+      .hero .top{flex-direction:column}
+      .hero .big img{height:220px}
+      .list{grid-template-columns:1fr}
+      .mini-cards{grid-template-columns:repeat(2,1fr)}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="site-header">
+      <div class="brand">
+        <div class="logo">PT</div>
+        <div>
+          <div style="font-weight:700">Portal Notícias</div>
+          <div style="font-size:13px;color:var(--muted)">Atualizações 24h</div>
+        </div>
+      </div>
+
+      <nav class="main-nav" aria-label="navegação principal">
+        <a href="#">Home</a>
+        <a href="#esporte">Esporte</a>
+        <a href="#economia">Economia</a>
+        <a href="#politica">Política</a>
+        <a href="#tecnologia">Tecnologia</a>
+        <a href="#cultura">Cultura</a>
+        <a href="#opiniao">Opinião</a>
+        <a href="#classificados">Classificados</a>
+      </nav>
+
+      <div class="actions">
+        <div class="search">
+          <input type="search" placeholder="Pesquisar notícias..." aria-label="pesquisar" />
+          <svg viewBox="0 0 24 24" fill="none"><path d="M21 21l-4.35-4.35" stroke="#6b7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="11" cy="11" r="6" stroke="#6b7280" stroke-width="2"/></svg>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="grid">
+        <section>
+          <div class="hero">
+            <div class="top">
+              <div class="big">
+                <img src="https://via.placeholder.com/1200x600.png?text=Manchete+Principal" alt="manchete" />
+                <h1>Manchete do Dia: Evento importante movimenta cidades</h1>
+                <p class="meta">Local • Autor • 2 horas atrás</p>
+                <p>Resumo curto da matéria principal para atrair o leitor. Use este espaço para uma entrada breve que leve o usuário a clicar na notícia completa.</p>
+
+                <div style="margin-top:12px" class="tags">
+                  <span class="tag">Política</span>
+                  <span class="tag">Economia</span>
+                  <span class="tag">Análise</span>
+                </div>
+              </div>
+
+              <div style="width:320px;display:flex;flex-direction:column;gap:12px">
+                <div class="card">
+                  <small>Ao vivo</small>
+                  <h3>Transmissão: Cobertura em tempo real</h3>
+                  <p class="meta">Acompanhe a atualização minuto a minuto.</p>
+                </div>
+                <div class="card">
+                  <small>Opinião</small>
+                  <h3>Editorial: Por que isso importa</h3>
+                  <p class="meta">Coluna semanal do editor-chefe.</p>
+                </div>
+                <div class="card">
+                </div>
+            </div>
+
+            <div class="mini-cards" style="margin-top:16px">
+              <div class="card">
+                <small>Economia</small>
+                <h3>Mercado reage a novas medidas</h3>
+                <p class="meta">Bolsa, câmbio e impacto para o consumidor.</p>
+              </div>
+              <div class="card">
+                <small>Esporte</small>
+                <h3>Clássico: resultado e melhores momentos</h3>
+                <p class="meta">Gols, estatísticas e entrevistas.</p>
+              </div>
+              <div class="card">
+                <small>Tecnologia</small>
+                <h3>Lançamento de gadget promete inovação</h3>
+                <p class="meta">Teste e primeiras impressões.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Seções detalhadas -->
+
+          <section id="esporte" style="margin-top:20px">
+            <div class="section-title">
+              <h2>Esporte</h2>
+              <a href="#">Ver mais</a>
+            </div>
+            <div class="list">
+            <article class="article-card card">
+                <img src="https://via.placeholder.com/300x200.png?text=Esporte+1" alt="ES1"/>
+                <div>
+                    <h3>Flamengo x Mirassol </h3>
+                <p class="meta">Resumo da partida, gols e destaques.</p>
+                </div>
+              </article>
+
+              <article class="article-card card">
+                <img src="https://via.placeholder.com/300x200.png?text=Esporte+2" alt="ES2"/>
+                <div>
+                  <h3>Bola de ouro </h3>
+                  <p class="meta">Entrevista exclusiva com Gustavo Eberhardt ganhador da bola de ouro .</p>
+                </div>
+              </article>
+
+              <article class="article-card card">
+                <img src="https://via.placeholder.com/300x200.png?text=Esporte+3" alt="ES3"/>
+                <div>
+                  <h3>Calendário: próximos jogos e transmissões</h3>
+                  <p class="meta">O que assistir nesta semana.</p>
+                </div>
+              </article>
+
+              <article class="article-card card">
+                <img src="https://via.placeholder.com/300x200.png?text=Esporte+4" alt="ES4"/>
+                <div>
+                  <h3>Estatísticas: performance dos times</h3>
+                  <p class="meta">Análises e números relevantes.</p>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section id="economia" style="margin-top:20px">
+            <div class="section-title">
+              <h2>Economia</h2>
+              <a href="#">Ver mais</a>
+            </div>
+            <div class="list">
+              <article class="article-card card">
+                <img src="https://via.placeholder.com/300x200.png?text=Economia+1" alt="EC1"/>
+                <div>
+                  <h3>Inflação: o que esperar nos próximos meses</h3>
+                  <p class="meta">Impacto no bolso do consumidor.</p>
+                </div>
+              </article>
+
+              <article class="article-card card">
+                <img src="https://via.placeholder.com/300x200.png?text=Economia+2" alt="EC2"/>
+                <div>
+                  <h3>Trump anuncia nova taxação </h3>
+                  <p class="meta">Setores em destaque.</p>
+                </div>
+              </article>
+
+              <article class="article-card card">
+                <img src="https://via.placeholder.com/300x200.png?text=Economia+3" alt="EC3"/>
+                <div>
+                  <h3>Mercado de trabalho: dicas e tendências</h3>
+                  <p class="meta">Setores que contratam e salários médios.</p>
+                </div>
+              </article>
+
+              <article class="article-card card">
+                <img src="https://via.placeholder.com/300x200.png?text=Economia+4" alt="EC4"/>
+                <div>
+                  <h3>Investimentos: guia para iniciantes</h3>
+                  <p class="meta">Como começar a poupar e investir.</p>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section id="politica" style="margin-top:20px">
+            <div class="section-title">
+              <h2>Política</h2>
+              <a href="#">Ver mais</a>
+            </div>
+            <div class="list">
+              <article class="article-card card">
+                <img src="https://via.placeholder.com/300x200.png?text=Pol%C3%ADtica+1" alt="P1"/>
+                <div>
+                  <h3>Debate: propostas e posicionamentos</h3>
+                  <p class="meta">Resumo dos principais pontos.</p>
+                </div>
+              </article>
+
+              <article class="article-card card">
+                <img src="https://via.placeholder.com/300x200.png?text=Pol%C3%ADtica+2" alt="P2"/>
+                <div>
+                  <h3>Entrevista: liderança fala sobre projeto</h3>
+                  <p class="meta">Perguntas e respostas.</p>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section id="tecnologia" style="margin-top:20px">
+            <div class="section-title">
+              <h2>Tecnologia</h2>
+              <a href="#">Ver mais</a>
+            </div>
+            <div class="list">
+              <article class="article-card card">
+                <img src="https://via.placeholder.com/300x200.png?text=Tec+1" alt="T1"/>
+                <div>
+                  <h3>Startups: inovação local</h3>
+                  <p class="meta">Quem está mudando o mercado.</p>
+                </div>
+              </article>
+
+              <article class="article-card card">
+                <img src="https://via.placeholder.com/300x200.png?text=Tec+2" alt="T2"/>
+                <div>
+                  <h3>Guias: como usar ferramentas online</h3>
+                  <p class="meta">Passo a passo para iniciantes.</p>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section id="cultura" style="margin-top:20px">
+            <div class="section-title">
+              <h2>Cultura</h2>
+              <a href="#">Ver mais</a>
+            </div>
+            <div class="list">
+              <article class="article-card card">
+                <img src="https://via.placeholder.com/300x200.png?text=Cult+1" alt="C1"/>
+                <div>
+                  <h3>Agenda cultural: exposições e shows</h3>
+                  <p class="meta">O que visitar nesta semana.</p>
+                </div>
+              </article>
+
+              <article class="article-card card">
+                <img src="https://via.placeholder.com/300x200.png?text=Cult+2" alt="C2"/>
+                <div>
+                  <h3>Resenha: cinema e literatura</h3>
+                  <p class="meta">Críticas e recomendações.</p>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section id="opiniao" style="margin-top:20px">
+            <div class="section-title">
+              <h2>Opinião</h2>
+              <a href="#">Ver mais</a>
+            </div>
+            <div class="list">
+              <article class="article-card card">
+                <img src="https://via.placeholder.com/300x200.png?text=Opini%C3%A3o+1" alt="O1"/>
+                <div>
+                  <h3>Coluna: reflexão sobre tema atual</h3>
+                  <p class="meta">Artigo de opinião do colunista.</p>
+                </div>
+              </article>
+            </div>
+          </section>
+
+        </section>
+
+        <aside class="sidebar">
+          <div class="widget">
+            <h3>Destaques</h3>
+            <div class="article-card" style="margin-top:8px">
+              <img src="https://via.placeholder.com/120x80.png?text=Destaque" alt="dest"/>
+              <div>
+                <h3>Reportagem especial: temas relevantes</h3>
+                <p class="meta">Leitura longa e aprofundada.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="widget">
+            <h3>Tags</h3>
+            <div class="topics" style="margin-top:8px">
+              <span class="topic">Eleições</span>
+              <span class="topic">Copa</span>
+              <span class="topic">Crise</span>
+              <span class="topic">Mercado</span>
+              <span class="topic">Tecnologia</span>
+              <span class="topic">Saúde</span>
+            </div>
+          </div>
+
+          <div class="widget">
+            <h3>Newsletter</h3>
+            <p class="meta">Receba um resumo diário das principais notícias.</p>
+            <form onsubmit="event.preventDefault();alert('Obrigado por assinar!');">
+              <input type="email" placeholder="seu@email.com" required style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e9ef;margin-top:8px" />
+              <button style="margin-top:8px;width:100%;padding:10px;border-radius:8px;border:0;background:var(--accent);color:white;font-weight:600">Assinar</button>
+            </form>
+          </div>
+
+          <div class="widget">
+            <h3>Contato</h3>
+            <p class="meta">Envie sugestões, denúncias ou anúncios.</p>
+            <p style="font-size:14px;margin:8px 0">email: contato@portal.com • tel: (00) 0000-0000</p>
+          </div>
+        </aside>
+      </div>
+
+      <section style="margin-top:24px">
+        <div class="article-full">
+          <h2>Modelo de artigo completo</h2>
+          <p class="meta">Local • Autor • Data</p>
+          <img src="https://via.placeholder.com/1200x600.png?text=Imagem+de+artigo" alt="imagem-artigo"/>
+          <p style="margin-top:12px">Este é um modelo de como um artigo completo pode aparecer. Insira o texto da reportagem aqui, com subtítulos (<strong>subtítulo</strong>), citações, listas e imagens. A estrutura mostra o uso de parágrafos, meta-informações e imagens em destaque. Adicione campos como autor, fontes e links relacionados conforme necessário.</p>
+
+          <h3 style="margin-top:10px">Subtítulo: contexto e detalhes</h3>
+          <p class="meta">Seções do artigo podem incluir: background, entrevistas, dados e conclusão.</p>
+
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div style="max-width:var(--max-width);margin:18px auto;padding:0 16px;color:var(--muted)">
+        <p>© Portal Notícias — Todos os direitos reservados • Política de privacidade • Termos de uso</p>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
