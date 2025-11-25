@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conecta POA - News</title>
+  <link rel="stylesheet" href="./noticias.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="menu-icon" id="menuButton">☰</div>
+    <div class="search-box">
+      <input type="text" placeholder="🔍 Search news..." />
+    </div>
+    <img src="./logo.png" alt="Conecta POA" class="logo">
+  </header>
+
+  <nav id="sideMenu" class="side-menu">
+    <a href="./ex.html">Home</a>
+    <a href="./noticias.html"> News</a>
+    <a href="#"> About Porto Alegre</a>
+    <a href="#"> Contact</a>
+  </nav>
+
+  <main class="content">
+    <section>
+      <h2>Main News</h2>
+      <div class="carousel-container">
+        <button class="arrow left" data-target="carousel1">←</button>
+        <div class="carousel" id="carousel1">
+          <div class="card">
+            <img src="./n1.webp" alt="Politics">
+            <p>Como Porto Alegre quase quebrou, e como um banqueiro decidiu reinventá-la </p>
+          </div>
+          <div class="card">
+            <img src="./n2.webp" alt="POA Center">
+            <p>Últimas unidades de saúde afetadas pela enchente retomam atividades em suas áreas em Porto Alegre</p>
+          </div>
+          <div class="card">
+            <img src="./n3.webp" alt="Economy">
+            <p>Área do antigo Esqueletão é declarada de utilidade pública</p>
+          </div>
+          <div class="card">
+            <img src="https://source.unsplash.com/600x400/?weather,porto-alegre" alt="Weather">
+            <p>Heavy rain hits metro area</p>
+          </div>
+        </div>
+        <div class="card">
+            <img src="https://source.unsplash.com/600x400/?money,business" alt="Economy">
+            <p>Local companies expand hiring in 2025</p>
+          </div>
+        <button class="arrow right" data-target="carousel1">→</button>
+      </div>
+    </section>
+
+    <section>
+      <h2>Economy</h2>
+      <div class="carousel-container">
+        <button class="arrow left" data-target="carousel2">←</button>
+        <div class="carousel" id="carousel2">
+          <div class="card">
+            <img src="https://source.unsplash.com/600x400/?money,business" alt="Economy">
+            <p>Local companies expand hiring in 2025</p>
+          </div>
+          <div class="card">
+            <img src="https://source.unsplash.com/600x400/?port,industry" alt="Industry">
+            <p>Rio Grande port breaks export record</p>
+          </div>
+          <div class="card">
+            <img src="https://source.unsplash.com/600x400/?commerce,porto-alegre" alt="Commerce">
+            <p>New investments boost local trade</p>
+          </div>
+          <div class="card">
+            <img src="https://source.unsplash.com/600x400/?technology,startup" alt="Tech">
+            <p>Gaúcha startups gain national attention</p>
+          </div>
+        </div>
+        <button class="arrow right" data-target="carousel2">→</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Conecta POA</p>
+  </footer>
+
+  <script>
+    const menuButton = document.getElementById('menuButton');
+    const sideMenu = document.getElementById('sideMenu');
+    menuButton.addEventListener('click', () => {
+      sideMenu.classList.toggle('open');
+    });
+    const rightButtons = document.querySelectorAll('.right');
+    const leftButtons = document.querySelectorAll('.left');
+
+    rightButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = document.getElementById(btn.dataset.target);
+        target.scrollBy({ left: 300, behavior: 'smooth' });
+      });
+    });
+
+    leftButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = document.getElementById(btn.dataset.target);
+        target.scrollBy({ left: -300, behavior: 'smooth' });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conecta POA - Mapa</title>
+    <link rel="stylesheet" href="./mapa.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+</head>
+<body>
+  <div id="map"></div>
+
+  <button class="voltar" onclick="window.location.href='noticias.html'">
+    ⬅ Voltar ao Portal de Notícias
+  </button>
+
+  <div class="caixa-pesquisa">
+    <div class="campo-busca">
+      <input type="text" placeholder="Buscar..." />
+    </div>
+
+    <div class="botoes">
+      <button>Restaurantes</button>
+      <button>Gasolina</button>
+      <button>Hotéis</button>
+    </div>
+
+    <div class="mini-mapa" id="mini-map"></div>
+
+    <div class="lista-pesquisa">
+      <h3><em>Pesquisas da Região</em></h3>
+      <ul>
+        <li>→ Shopping Total</li>
+        <li>→ Hospital São Lucas</li>
+        <li>→ Bourbon Assis Brasil</li>
+        <li>→ Libero Badaró</li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    const map = L.map('map').setView([-30.0277, -51.2287], 12);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap'
+    }).addTo(map);
+
+    L.marker([-30.0277, -51.2287])
+        .addTo(map)
+        .bindPopup('Porto Alegre ')
+        .openPopup();
+    const miniMap = L.map('mini-map', {
+        center: [-30.0277, -51.2287],
+        zoom: 13,
+        zoomControl: false,
+        attributionControl: false,
+        dragging: false,
+    });
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(miniMap);
+</script>
+</body>
+</html>

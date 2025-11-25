@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+/* MENU LATERAL */
+#sidebar {
+  width: 260px;
+  height: 100vh;
+  background: #1a0033;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: -260px;
+  padding: 20px;
+  transition: 0.3s;
+  z-index: 999;
+}
+
+#sidebar a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 12px 0;
+  font-size: 1.1rem;
+}
+
+#sidebar #closeMenu {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+/* CABEÇALHO */
+.top-bar {
+  background: #1a0033;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+}
+
+.menu-btn {
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-right: 15px;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  flex-grow: 1;
+}
+
+.logo span {
+  color: #c3a0ff;
+}
+
+.top-menu a {
+  padding: 5px 12px;
+  margin-left: 10px;
+  border: 1px solid white;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: white;
+  text-decoration: none;
+}
+
+/* BUSCA */
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.search-container input {
+  width: 80%;
+  padding: 12px;
+  border-radius: 20px;
+  border: none;
+  background: #e6e6e6;
+}
+
+/* TÍTULO */
+.section-title {
+  margin-left: 20px;
+  margin-top: 20px;
+  font-size: 1rem;
+}
+
+/* CARDS LADO A LADO */
+.row-cards {
+  width: 90%;
+  margin: 15px auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.row-cards .card {
+  width: 48%;
+}
+
+/* CARD */
+.card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+}
+
+.card-text {
+  padding: 12px;
+}
+
+.card-text h4 {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.card-text p {
+  color: #555;
+}
+
+/* RESPONSIVO */
+@media (max-width: 780px) {
+  .row-cards {
+    flex-direction: column;
+  }
+
+  .row-cards .card {
+    width: 100%;
+  }
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conecta POA</title>
+  <link rel="stylesheet" href="./estilo.css">
+</head>
+<body>
+      <header class="topbar">
+    <div class="logo">Conecta <span>POA</span></div>
+    <nav class="menu">
+      <a href="index.html" class="active">Início</a>
+      <a href="./noticias.html">Notícias</a>
+
+    </nav>
+  </header>
+
+  <section class="search-area">
+    <input type="text" placeholder="Pesquise aqui...">
+    <button>🔍</button>
+  </section>
+  <main>
+    <div class="content-row">
+      <div class="card map-card" onclick="window.location.href='mapa.html'">
+        <img src="./Captura de tela 2025-11-11 113001.png" alt="Mapa de Porto Alegre">
+        <h3>PORTO ALEGRE</h3>
+      </div>
+
+      <div class="card news-card" onclick="window.location.href='noticia.html'">
+        <img src="./new.png" alt="Notícia">
+        <h3>NOTÍCIAS</h3>
+        <p>Aumento no número de turistas em Porto Alegre</p>
+      </div>
+    </div>
+
+    <h2 class="subtitle">Navegue por Categoria</h2>
+    <p class="desc">Encontre o serviço ou a informação desejada pelas opções abaixo:</p>
+
+    <div class="grid">
+      <div class="box"><span></span><p>AGRICULTURA E PECUÁRIA</p></div>
+      <div class="box"><span></span><p>ASSISTÊNCIA SOCIAL</p></div>
+      <div class="box empty"></div>
+      <div class="box empty"></div>
+      <div class="box empty"></div>
+      <div class="box empty"></div>
+    </div>
+  </main>
+
+  <script>
+    document.querySelectorAll('.menu a').forEach(link => {
+      if (link.href === window.location.href) link.classList.add('active');
+    });
+  </script>
+</body>
+</html>

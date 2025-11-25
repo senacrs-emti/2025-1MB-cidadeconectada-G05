@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Conecta POA — Mapa</title>
+
+
+    <link rel="stylesheet" href="./estilo.css">
+</head>
+<body>
+    <header>
+    <h1>Conecta POA</h1>
+    <div class="menu-icon">☰</div>
+    <div class="busca-container">
+        <input type="text" placeholder="🔍Buscar notícias..." class="busca" />
+    </div>
+    </header>
+
+<main>
+    <section class="destaques">
+        <div class="botoes-container">
+    <button class="card-btn">
+    <img src="./exemplo.html/Captura de tela 2025-11-11 113001.png" alt="Mapa de Porto Alegre" class="mapa-previa">
+    <p>PORTO ALEGRE</p>
+    </button>
+    <button class="card-btn">
+    <img src="./exemplo.html/new.png" alt="Notícia" class="mapa-previa">
+    <p>NOTÍCIA</p>
+    </button>
+    </div>
+    </section>
+    <section class="categorias">
+    <h2> Categoria</h2>
+        <div class="grade">
+            <div class="categoria"></div>
+            <div class="categoria"></div>
+            <div class="categoria"></div>
+            <div class="categoria"></div>
+            <div class="categoria"></div>
+            <div class="categoria"></div>
+            <div class="categoria"></div>
+            <div class="categoria"></div>
+            <div class="categoria"></div>
+            <div class="categoria"></div>
+        </div>
+    </section>
+
+    <section class="mapa">
+        <h2>Explore Porto Alegre</h2>
+        <div id="map">
+                <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+                    <script src="./exemplo.html/mapa.js"></script>
+        </div>
+    </section>
+</main>
+    <footer>
+        <p>© 2025 Conecta POA</p>
+    </footer>
+
+</body>
+</html>

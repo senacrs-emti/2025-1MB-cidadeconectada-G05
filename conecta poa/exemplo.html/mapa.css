@@ -1,0 +1,117 @@
+body, html {
+  margin: 0;
+  height: 100%;
+  font-family: "Poppins", sans-serif;
+  background: #eae2ff;
+}
+
+#map {
+  height: 100vh;
+  width: 100%;
+}
+
+/* 🔙 Botão Voltar */
+.voltar {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #6c2be3;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  transition: background 0.3s;
+  z-index: 2000;
+}
+
+.voltar:hover {
+  background-color: #501db3;
+}
+
+/* Caixa lateral */
+.caixa-pesquisa {
+  position: absolute;
+  top: 70px;
+  left: 30px;
+  width: 340px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  padding: 20px;
+  z-index: 1000;
+}
+
+/* Campo de busca */
+.campo-busca {
+  display: flex;
+  align-items: center;
+  background: #f3f3f3;
+  border-radius: 25px;
+  padding: 8px 12px;
+}
+
+.campo-busca input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 1rem;
+  outline: none;
+}
+
+/* Botões */
+.botoes {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0;
+}
+
+.botoes button {
+  flex: 1;
+  background: #d8d0ff;
+  border: none;
+  border-radius: 12px;
+  padding: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin: 0 4px;
+}
+
+.botoes button:hover {
+  background: #b89aff;
+  color: white;
+}
+
+/* Mini mapa */
+.mini-mapa {
+  height: 120px;
+  border-radius: 10px;
+  margin: 10px 0;
+  overflow: hidden;
+}
+
+/* Lista */
+.lista-pesquisa h3 {
+  margin-top: 10px;
+  font-size: 1.1rem;
+  font-style: italic;
+}
+
+.lista-pesquisa ul {
+  list-style: none;
+  padding: 0;
+}
+
+.lista-pesquisa li {
+  margin: 6px 0;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.lista-pesquisa li:hover {
+  color: #6c2be3;
+}
